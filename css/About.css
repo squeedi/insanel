@@ -1,0 +1,414 @@
+
+        /* Основные стили */
+        body {
+            background-color: #cfcac4;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comfortaa', sans-serif;
+            color: #333;
+        }
+        
+        .text {
+            font-style: italic;
+            color: #710202;
+            text-shadow: 1px 1px #ff9a3c;
+        }
+        
+        /* Контейнер */
+        .container {
+            max-width: 1250px;
+            min-width: 320px;
+            margin: 20px auto;
+            background-color: #fffcf8;
+            border: 1px solid #6a4338;
+            box-shadow: 2px 2px 10px 5px rgba(106, 67, 56, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Шапка */
+        .header {
+            background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 100%);
+            padding: 10px 0;
+            position: relative;
+            border-bottom: 1px solid #6a4338;
+        }
+        
+        .logo {
+            font-family: 'Comfortaa';
+            text-align: center;
+            margin: 10px auto;
+            width: 120px;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        /* Навигация */
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 10px;
+        }
+        
+        .nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav ul li {
+            margin-left: 5px;
+        }
+        
+        .catalog {
+            display: block;
+            padding: 10px 15px;
+            background-color: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: 'Comfortaa';
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 500;
+            margin: 5px;
+        }
+        
+        .catalog:hover {
+            background-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .catalogHome {
+            width: 50px;
+            margin-left: 20px;
+            text-align: center;
+            font-family: 'Comfortaa';
+            display: inline-block;
+            height: 53px;
+            margin-bottom: 80px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Секции */
+        .section {
+            margin: 50px 0;
+            padding: 0 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-family: 'Comfortaa';
+            margin: 0 20px;
+            white-space: nowrap;
+            color: #710202;
+            font-weight: 500;
+            font-size: 1.5em;
+            font-style: italic;
+            text-shadow: 1px 1px 5px rgba(108, 48, 48, 0.5);
+        }
+        
+        .section-line {
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ff7043, transparent);
+        }
+        
+        /* Блок "О нас" */
+        .aboutus {
+            margin: 20px;
+            width: calc(100% - 40px);
+            height: auto;
+            font-family: 'Comfortaa';
+            background-color: #ffdedd;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ff7043;
+            border-radius: 10px ;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .about-text {
+            width: 100%;
+            color: #710202;
+            margin-bottom: 20px;
+        }
+        
+        .about-text h2 {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .about-image {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border: 1px solid #6a4338;
+        }
+        
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Контакты */
+        .contact {
+            margin-top: 30px;
+            width: 100%;
+            height: auto;
+            background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 100%);
+            padding: 30px 0;
+            color: white;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .contact.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-header h1 {
+            font-family: 'Comfortaa';
+            font-size: 24px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .contact-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
+        
+        .contact-section {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-details h3 {
+            font-family: 'Comfortaa';
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+        
+        .about-us a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Comfortaa';
+            transition: all 0.3s ease;
+        }
+        
+        .about-us a:hover {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+        
+        .registration-info {
+            text-align: center;
+            padding: 15px;
+            font-family: 'Comfortaa';
+            font-size: 12px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+        
+        /* Вертикальное меню */
+        .vertical-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 100%);
+            z-index: 1000;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            padding-top: 60px;
+            box-shadow: 1px 2px 5px 1px inset rgba(106, 67, 56, 0.3);
+            border-right: 1px solid #6a4338;
+        }
+
+        .vertical-menu.active {
+            transform: translateX(0);
+        }
+
+        .vertical-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .vertical-menu li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #ff9a3c;
+        }
+
+        .vertical-menu a {
+            color: #fffcf8;
+            text-decoration: none;
+            font-family: 'Comfortaa';
+            display: block;
+        }
+
+        .vertical-menu a:hover {
+            color: #710202;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fffcf8;
+        }
+
+        /* Мобильное меню */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 15px;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fffcf8;
+            z-index: 1;
+        }
+
+        /* Медиазапросы для адаптации */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 0;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            .header {
+                height: 80px;
+                padding: 0 10px;
+            }
+
+            .logo {
+                margin-right: 20px;
+                font-size: 14px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .aboutus {
+                margin: 10px;
+                width: calc(100% - 20px);
+                padding: 15px;
+            }
+
+            .catalog {
+                width: 150px;
+                height: 45px;
+                font-size: 12px;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .contact-section {
+                margin: 10px 0;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .aboutus {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            
+            .about-text {
+                width: 60%;
+                padding-right: 20px;
+            }
+            
+            .about-image {
+                width: 40%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1em;
+            }
+        }
+   

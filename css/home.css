@@ -1,0 +1,519 @@
+body {
+  background-color: #cfcac4;
+  margin: 0;
+  padding: 0;
+  font-family: "Comfortaa", Arial, sans-serif;
+  color: #333;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("fonts/Comfortaa/Comfortaa.ttf");
+}
+.container {
+  max-width: 1250px;
+  min-width: 320px;
+  margin: 20px auto;
+  background-color: #fffcf8;
+  border: 1px solid #6a4338;
+  box-shadow: 2px 2px 10px 5px #6a4338;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.Name {
+  background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 100%);
+  padding: 10px 0;
+  position: relative;
+}
+
+.nameshop {
+  font-family: "Comfortaa", Arial, sans-serif;
+  text-align: center;
+  margin: 10px auto;
+  width: 120px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nav ul li {
+  margin-left: 5px;
+}
+
+.catalog {
+  display: block;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-family: "Comfortaa", Arial, sans-serif;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  width: 150px;
+  margin-left: 8px;
+  margin-bottom: 30px;
+}
+.catalog:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.cart-container {
+  position: relative;
+  margin-left: 5px;
+}
+
+.vertical-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 100%);
+  z-index: 1000;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding-top: 60px;
+  box-shadow: 1px 2px 5px 1px inset #5a3c15;
+}
+.vertical-menu.active {
+  transform: translateX(0);
+}
+.vertical-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.vertical-menu li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #fbc176;
+}
+.vertical-menu a {
+  color: #ffd8be;
+  text-decoration: none;
+  font-family: "Comfortaa", Arial, sans-serif;
+  display: block;
+}
+.vertical-menu a:hover {
+  color: #5a3c15;
+}
+
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffd8be;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+.top-section {
+  margin: 50px 0;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.top-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: "Comfortaa", Arial, sans-serif;
+  margin: 0 20px;
+  white-space: nowrap;
+  color: #710202;
+  font-weight: 500;
+  font-size: 1.5em;
+  font-style: italic;
+  text-shadow: 1px 1px 5px rgba(108, 48, 48, 0.5);
+}
+
+.section-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ff7043, transparent);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin: 100px 0;
+}
+.products-grid.products-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-item, .product-itemt {
+  position: relative;
+  width: 100%;
+  height: 275px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+}
+.product-item.visible, .product-itemt.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.product-item:hover, .product-itemt:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 10px 5px #a26756;
+}
+.product-item .product-image, .product-itemt .product-image {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.product-item:hover .product-image, .product-itemt:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(255, 142, 107, 0.2), transparent);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 15px;
+}
+.product-overlay h3 {
+  color: #710202;
+  font-family: "Comfortaa", Arial, sans-serif;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+
+.contact {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(135deg, #ff9a3c 0%, #ff6b6b 100%);
+  padding: 30px 0;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-header h1 {
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.contact-section {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  min-width: 200px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-details h3 {
+  font-family: "Comfortaa", Arial, sans-serif;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+.contact-details a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.contact-details a:hover {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+.about-us a {
+  color: white;
+  text-decoration: none;
+  font-family: "Comfortaa", Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+.about-us a:hover {
+  color: #ffeb3b;
+  text-decoration: underline;
+}
+
+.registration-info {
+  text-align: center;
+  padding: 15px;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .nav-link {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+}
+.dropdown-content a {
+  color: #ff7043;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.dropdown-content a:hover {
+  background-color: #fff3e0;
+  color: #ff5722;
+  padding-left: 20px;
+}
+
+.svgphoto {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  background-image: url(magazin.png);
+  background-position: left;
+}
+.svgphoto svg {
+  display: block;
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+}
+
+.svg-icons-container {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 2;
+  margin-left: 600px;
+  width: 300px;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+.icon-group:hover {
+  transform: scale(1.05);
+}
+
+.svg-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.svg-icon svg {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+
+.icon-group h2 {
+  margin: 0;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    border-radius: 0;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .products-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 1.2em;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .nav {
+    display: none;
+  }
+  .nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nav ul li {
+    margin: 5px 0;
+    width: 100%;
+  }
+  .catalog {
+    width: calc(100% - 20px);
+    margin: 5px auto;
+    height: 40px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  .cart-container {
+    margin: 10px auto;
+    width: calc(100% - 20px);
+    text-align: center;
+  }
+  .contact-content {
+    flex-direction: column;
+  }
+  .contact-section {
+    margin: 10px 0;
+  }
+  .svgphoto {
+    height: auto;
+    padding: 40px 0;
+    background-image: url(magazin.png);
+    background-position: center;
+  }
+  .svg-icons-container {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 20px;
+  }
+  .icon-group {
+    margin-left: 50px;
+  }
+  .svg-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-group h2 {
+    font-size: 14px;
+    white-space: normal;
+  }
+}
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-item, .product-itemt {
+    height: 250px;
+  }
+  .section-title {
+    font-size: 1em;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
