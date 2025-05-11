@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="home.xsl"?>
+<home-page>
+    <sections>
+        <section id="weekly">
+            <title>Товары недели</title>
+            <products>
+                <product>
+                    <link>santexnika.html</link>
+                    <image>photo/dush3.jpg</image>
+                    <name>Сантехника</name>
+                </product>
+                <product>
+                    <link>Electrica.html</link>
+                    <image>photo/lampa2.jpg</image>
+                    <name>Электрика</name>
+                </product>
+                <product>
+                    <link>Instrument.html</link>
+                    <image>photo/gazon1.jpg</image>
+                    <name>Инструменты</name>
+                </product>
+            </products>
+        </section>
+        
+        <section id="plumbing">
+            <title>Сантехника</title>
+            <products>
+                <product>
+                    <link>santexnika.html#vanny</link>
+                    <image>photo/vanna1.jpg</image>
+                    <name>Ванны</name>
+                </product>
+                <product>
+                    <link>santexnika.html#dush</link>
+                    <image>photo/dush4.jpg</image>
+                    <name>Душевые кабины</name>
+                </product>
+                <product>
+                    <link>santexnika.html#unitazy</link>
+                    <image>photo/toilet1.jpg</image>
+                    <name>Унитазы</name>
+                </product>
+                <product>
+                    <link>santexnika.html#smesiteli</link>
+                    <image>photo/kran1.jpg</image>
+                    <name>Смесители</name>
+                </product>
+            </products>
+        </section>
+        
+        <section id="electrical">
+            <title>Электрика</title>
+            <products>
+                <product>
+                    <link>Electrica.html#lustra</link>
+                    <image>photo/lustra2.jpg</image>
+                    <name>Люстры</name>
+                </product>
+                <product>
+                    <link>Electrica.html#lamp</link>
+                    <image>photo/lampa1.jpg</image>
+                    <name>Лампы</name>
+                </product>
+                <product>
+                    <link>Electrica.html#bulb</link>
+                    <image>photo/lampochka1.jpg</image>
+                    <name>Лампочки</name>
+                </product>
+                <product>
+                    <link>Electrica.html#dopelectro</link>
+                    <image>photo/electrot1.jpg</image>
+                    <name>Электротовары</name>
+                </product>
+            </products>
+        </section>
+        
+        <section id="tools">
+            <title>Инструменты</title>
+            <products>
+                <product>
+                    <link>Instrument.html#garden</link>
+                    <image>photo/garden1.jpg</image>
+                    <name>Садовый инструмент</name>
+                </product>
+                <product>
+                    <link>Instrument.html#ruch</link>
+                    <image>photo/ruch1.jpg</image>
+                    <name>Ручной инструмент</name>
+                </product>
+                <product>
+                    <link>Instrument.html#stroit</link>
+                    <image>photo/stroit1.jpg</image>
+                    <name>Строительное оборудование</name>
+                </product>
+                <product>
+                    <link>Instrument.html#gazon</link>
+                    <image>photo/gazon1.jpg</image>
+                    <name>Газонокосилки</name>
+                </product>
+            </products>
+        </section>
+    </sections>
+</home-page>
